@@ -1,5 +1,7 @@
 # finance-menager-app
 
+This application is a simple help in managing your money
+
 ## Project setup
 ```
 npm install
