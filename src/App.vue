@@ -32,7 +32,7 @@ export default {
 body{
   font-size: 17px;
   // background-color: black;
-  color: white;
+  color: black;
 }
 .container{
   width: 100%;
