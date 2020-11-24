@@ -1,12 +1,11 @@
 <template>
   <Background />
-  <div class="container">
-    <h1>Hello World</h1>
-  </div>
+  <Input />
 </template>
 
 <script>
 import HeroBackground from './components/HeroBackground.vue';
+import SearchInput from './components/SearchInput.vue';
 
 export default {
   name: 'App',
@@ -17,6 +16,7 @@ export default {
   },
   components: {
     Background: HeroBackground,
+    Input: SearchInput,
   },
 };
 </script>

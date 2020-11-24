@@ -71,10 +71,10 @@ export default {
   width: 500px;
   height: 500px;
   position: absolute;
-  top: 60%;
-  left:10%;
+  top: 50%;
+  left:-10%;
 }
 .shape-element{
-  fill: #d0f7f7;
+  fill: #a7e6e6;
 }
 </style>
