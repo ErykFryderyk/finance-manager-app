@@ -45,13 +45,13 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
+
 .hero-background{
   width: 100%;
   height: 100vh;
   position: fixed;
-  background: #dcf0f0;
-  background: linear-gradient(150deg, #dcf0f0 0%, #9edada);
+  background: #AED6F1;
   z-index: -1;
 }
 .shape-1{
@@ -75,6 +75,6 @@ export default {
   left:-10%;
 }
 .shape-element{
-  fill: #a7e6e6;
+  fill: #f9f9f9;
 }
 </style>
