@@ -1,13 +1,13 @@
 <template>
-  <Header/>
-  <Background />
-  <Input />
+    <Background />
+    <Header/>
+    <Money/>
 </template>
 
 <script>
-import HeaderSection from './components/Header.vue';
 import HeroBackground from './components/HeroBackground.vue';
-import SearchInput from './components/SearchInput.vue';
+import HeaderSection from './components/Header.vue';
+import MyMoney from './components/MyMoney.vue';
 
 export default {
   name: 'App',
@@ -17,9 +17,9 @@ export default {
     };
   },
   components: {
-    Header: HeaderSection,
     Background: HeroBackground,
-    Input: SearchInput,
+    Header: HeaderSection,
+    Money: MyMoney,
   },
 };
 </script>
@@ -34,15 +34,7 @@ export default {
 
 body{
   font-size: 17px;
-  // background-color: black;
   color: black;
   font-family: 'Poppins', sans-serif;
 }
-.container{
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto 0 auto;
-  padding: 0 15px 0 15px;
-}
-
 </style>

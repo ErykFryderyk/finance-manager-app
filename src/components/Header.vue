@@ -2,7 +2,7 @@
   <div class="header">
     <div class="header__logo">
       <div class="logo">
-        <img src="../assets/img/business.svg" alt="logo-icon">
+        <img class="logo__icon" src="../assets/img/business.svg" alt="">
       </div>
     </div>
     <div class="header__welcome-user">
@@ -25,11 +25,16 @@ export default {
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #f0a167;
+  background-color: #b6ab46;
   box-shadow: 0px 0px 10px 1px #363636;
 
   &__logo{
     width: 60px;
+  }
+
+  &__title{
+    font-size: 24px;
+    font-weight:500;
   }
 }
 .logo{
@@ -39,14 +44,9 @@ export default {
   align-items: center;
   padding: 2px;
 
-  img{
+  &__icon{
+    fill: white;
     width: 100%;
-    fill: #ffffff;
   }
-}
-
-.header__title{
-  font-size: 24px;
-  font-weight:300;
 }
 </style>
