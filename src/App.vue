@@ -3,6 +3,7 @@
     <Header/>
     <Money/>
     <Mojkod/>
+    <NavbarSection/>
 </template>
 
 <script>
@@ -10,6 +11,7 @@ import HeroBackground from './components/HeroBackground.vue';
 import HeaderSection from './components/Header.vue';
 import MyMoney from './components/MyMoney.vue';
 import Expenses from './components/Expenses.vue';
+import Navbar from './components/NavBar.vue';
 
 export default {
   name: 'App',
@@ -23,6 +25,7 @@ export default {
     Header: HeaderSection,
     Money: MyMoney,
     Mojkod: Expenses,
+    NavbarSection: Navbar,
   },
 };
 </script>
