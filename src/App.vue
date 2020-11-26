@@ -2,12 +2,14 @@
     <Background />
     <Header/>
     <Money/>
+    <Mojkod/>
 </template>
 
 <script>
 import HeroBackground from './components/HeroBackground.vue';
 import HeaderSection from './components/Header.vue';
 import MyMoney from './components/MyMoney.vue';
+import Expenses from './components/Expenses.vue';
 
 export default {
   name: 'App',
@@ -20,6 +22,7 @@ export default {
     Background: HeroBackground,
     Header: HeaderSection,
     Money: MyMoney,
+    Mojkod: Expenses,
   },
 };
 </script>
