@@ -1,11 +1,5 @@
 <template>
   <div class="navbar-wrapper">
-    <ul>
-      <li></li>
-      <li></li>
-      <li></li>
-      <li></li>
-    </ul>
   </div>
 </template>
 
@@ -15,8 +9,9 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .navbar-wrapper{
+  box-shadow: 0px 0px 10px 0px #000;
   position: fixed;
   bottom: 0;
   width: 100%;
