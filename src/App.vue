@@ -2,7 +2,7 @@
     <Background />
     <Header/>
     <Money/>
-    <Mojkod/>
+    <ExpensesSection/>
     <NavbarSection/>
 </template>
 
@@ -24,7 +24,7 @@ export default {
     Background: HeroBackground,
     Header: HeaderSection,
     Money: MyMoney,
-    Mojkod: Expenses,
+    ExpensesSection: Expenses,
     NavbarSection: Navbar,
   },
 };

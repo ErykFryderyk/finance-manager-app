@@ -1,5 +1,6 @@
 <template>
   <div class="navbar-wrapper">
+    <h3>Navigacja</h3>
   </div>
 </template>
 
@@ -17,5 +18,10 @@ export default {
   width: 100%;
   height: 70px;
   background-color: black;
+  h3{
+    color:white;
+    font-size: 40px;
+    text-align: center;
+  }
 }
 </style>

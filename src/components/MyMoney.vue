@@ -15,7 +15,7 @@ export default {
 
 <style lang="scss" scoped>
 .my-money-wrapper{
-  background-color: #f1f1f1;
+  background-color: #f1f1f1a6;
   width: 100%;
   min-height: 200px;
   margin: 0 auto 0 auto;
