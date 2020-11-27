@@ -14,10 +14,10 @@
       <h3>Dom</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-listexpenses-list">
-      <ul>
-        <li>Czynsz</li>
-        <li>Śmieci</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">Czynsz<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Śmieci<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
     <div class="box">
@@ -34,12 +34,12 @@
       <h3>Rachunki</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-list">
-      <ul>
-        <li>Prąd</li>
-        <li>Telewizja</li>
-        <li>Internet</li>
-        <li>Telefon</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">Prąd<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Telewizja<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Internet<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Telefon<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
     <div class="box">
@@ -56,11 +56,12 @@
       <h3>Samochód</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-list">
-      <ul>
-        <li>Paliwo</li>
-        <li>Ubezpieczenie</li>
-        <li>Przegląd</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">Paliwo<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Ubezpieczenie
+          <span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Przegląd<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
     <div class="box">
@@ -77,11 +78,11 @@
       <h3>Jedzenie</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-list">
-      <ul>
-        <li>Sklep Lidl</li>
-        <li>Biedronka</li>
-        <li>Pizzeria</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">Sklep Lidl<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Biedronka<span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Pizzeria<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
     <div class="box">
@@ -98,11 +99,14 @@
       <h3>Zachcianki</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-list">
-      <ul>
-        <li>Bluzka Cropp</li>
-        <li>Buty Martens</li>
-        <li>Zegarek Casio</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">Bluzka Cropp
+          <span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Buty Martens
+          <span class="expenses-box__price">200zł</span></li>
+        <li class="expenses-box__item">Zegarek Casio
+          <span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
     <div class="box">
@@ -119,10 +123,14 @@
       <h3>Zdrowie</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-list">
-      <ul>
-        <li>Wizyta u Lekarza</li>
-        <li>Lekarstwa</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">
+          Wizyta u Lekarza<span class="expenses-box__price">200zł</span>
+        </li>
+        <li class="expenses-box__item">
+          Lekarstwa<span class="expenses-box__price">200zł</span>
+        </li>
       </ul>
     </div>
     <div class="box">
@@ -139,10 +147,14 @@
       <h3>Oszczędności</h3>
       <span>200,00zł</span>
     </div>
-    <div class="expenses-list">
-      <ul>
-        <li>Wakacje</li>
-        <li>Nowy rower</li>
+    <div class="expenses-box">
+      <ul class="expenses-box__list">
+        <li class="expenses-box__item">
+          Wakacje<span class="expenses-box__price">200zł</span>
+        </li>
+        <li class="expenses-box__item">
+          Nowy rower<span class="expenses-box__price">200zł</span>
+        </li>
       </ul>
     </div>
   </div>
@@ -164,6 +176,7 @@ export default {
 .box{
   display: flex;
   align-items: center;
+  background-color: #fff;
 }
 .box-icon{
   width: 10px;
@@ -171,10 +184,27 @@ export default {
   display:flex;
   justify-content: center;
   align-items: center;
+  margin: 0 10px;
+
+  &--active{
   transform: rotate(-90deg);
+  }
 }
 img{
   width: 30px;
   height: 30px;
+}
+.expenses-box{
+  width: 100%;
+
+  &__list{
+    list-style: none;
+    margin: 5px 30px;
+  }
+
+  &__item{
+    display: flex;
+    justify-content: space-between;
+  }
 }
 </style>
