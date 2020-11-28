@@ -193,11 +193,10 @@ export default {
   display: flex;
   align-items: center;
   height: 50px;
-  margin: 5px 0;
   cursor:pointer;
-  border-bottom: 1px solid #0000001f;
+  border-top: 1px solid #0000001f;
 
-  &:last-child{
+  &:first-child{
     border: 0;
   }
 
@@ -217,8 +216,9 @@ export default {
     font-weight: 400;
   }
   &__price{
-    font-size: 18px;
-    color:green;
+    font-size: 16px;
+    font-weight: 600;
+    color:#464646;;
   }
   &--close{
     .box-icon{
@@ -236,7 +236,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 10px;
-  fill:  #0000001f;
+  fill:  #00000040;
 }
 .expenses-box{
   width: 100%;
