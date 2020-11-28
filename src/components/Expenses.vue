@@ -208,7 +208,7 @@ export default {
     margin: 0px 10px;
   }
   &__title{
-    font-size: 20px;
+    font-size: 19px;
     font-weight: 500;
   }
   &__price{
