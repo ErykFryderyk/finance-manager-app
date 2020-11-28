@@ -10,7 +10,7 @@
         345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
         </svg>
       </div>
-      <img class="expenses-bar__icon" src="../assets/img/house.svg" alt="">
+      <img class="expenses-bar__icon" src="../assets/img/home.svg" alt="">
       <div class="expenses-bar__item">
         <h3 class="expenses-bar__title">Dom</h3>
         <span class="expenses-bar__price">200,00zł</span>
@@ -32,7 +32,7 @@
         345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
         </svg>
       </div>
-      <img class="expenses-bar__icon" src="../assets/img/invoice.svg" alt="">
+      <img class="expenses-bar__icon" src="../assets/img/wallet.svg" alt="">
       <div class="expenses-bar__item">
         <h3 class="expenses-bar__title">Rachunki</h3>
         <span class="expenses-bar__price">200,00zł</span>
@@ -192,7 +192,8 @@ export default {
 .expenses-bar{
   display: flex;
   align-items: center;
-  background-color: #fff;
+  // background-color: #fff;
+  margin: 5px 0;
   cursor:pointer;
 
   &__icon{
@@ -204,14 +205,14 @@ export default {
     width: 100%;
     display: flex;
     justify-content: space-between;
-    margin: 0px 20px;
+    margin: 0px 10px;
   }
   &__title{
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 500;
   }
   &__price{
-    font-size: 22px;
+    font-size: 18px;
     color:green;
   }
   &--close{
