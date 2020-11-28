@@ -1,6 +1,6 @@
 <template>
   <div class="expenses-wrapper">
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -16,7 +16,7 @@
         <span class="expenses-bar__price">200,00zł</span>
       </div>
     </div>
-    <div class="expenses-box">
+    <div class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">Czynsz<span class="expenses-box__price">200zł</span></li>
         <li class="expenses-box__item">Śmieci<span class="expenses-box__price">200zł</span></li>
@@ -147,7 +147,7 @@
         </li>
       </ul>
     </div>
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon box-icon--active">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -214,6 +214,11 @@ export default {
     font-size: 22px;
     color:green;
   }
+  &--close{
+    .box-icon{
+      transform: rotate(-90deg);
+    }
+  }
 }
 .box-icon{
   width: 10px;
@@ -222,10 +227,6 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 10px;
-
-  &--active{
-  transform: rotate(-90deg);
-  }
 }
 .expenses-box{
   width: 100%;
@@ -242,7 +243,8 @@ export default {
   }
 
   &--close{
-    transform: scaleY(0);
+    height: 0;
+    transform: scaleY(0) translateY(-100%);
   }
 }
 </style>
