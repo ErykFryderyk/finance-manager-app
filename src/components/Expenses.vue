@@ -24,8 +24,8 @@
     </div>
     <div class="expenses-bar">
       <div class="box-icon">
-        <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
-        <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
+        <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="" xml:space="preserve">
+        <path  d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
         151.157c-12.359-12.359-12.359-32.397,0-44.751 c12.354-12.354,
         32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,
         32.391-12.354,44.744,0 c12.365,12.354,12.365,32.392,0,44.751L248.292,
@@ -184,17 +184,22 @@ export default {
 
 <style lang="scss" scoped>
 .expenses-wrapper{
-  background-color: #f1f1f1a6;
+  background-color:#76beb7;
   width: 100%;
   margin: 0 auto 100px auto;
-  padding: 0 15px;
+  padding: 10px 0;
 }
 .expenses-bar{
   display: flex;
   align-items: center;
-  // background-color: #fff;
+  height: 50px;
   margin: 5px 0;
   cursor:pointer;
+  border-bottom: 1px solid #0000001f;
+
+  &:last-child{
+    border: 0;
+  }
 
   &__icon{
     width: 30px;
@@ -209,7 +214,7 @@ export default {
   }
   &__title{
     font-size: 19px;
-    font-weight: 500;
+    font-weight: 400;
   }
   &__price{
     font-size: 18px;
@@ -221,6 +226,9 @@ export default {
     }
   }
 }
+.expenses-wrapper .expenses-bar::last-child{
+  background-color: #fff;
+}
 .box-icon{
   width: 10px;
   height: 10px;
@@ -228,6 +236,7 @@ export default {
   justify-content: center;
   align-items: center;
   margin: 0 10px;
+  fill:  #0000001f;
 }
 .expenses-box{
   width: 100%;
