@@ -25,9 +25,8 @@ export default {
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #283655 ;
-  box-shadow: 0px 0px 10px 1px #363636;
-
+  background-color: #009688;
+  box-shadow: 0px 0px 10px 10px #363636;
   &__logo{
     width: 60px;
   }
