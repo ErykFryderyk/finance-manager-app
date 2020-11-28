@@ -22,7 +22,7 @@
         <li class="expenses-box__item">Śmieci<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="" xml:space="preserve">
         <path  d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -38,7 +38,7 @@
         <span class="expenses-bar__price">200,00zł</span>
       </div>
     </div>
-    <div class="expenses-box">
+    <div class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">
           Prąd<span class="expenses-box__price">200zł</span>
@@ -48,7 +48,7 @@
         <li class="expenses-box__item">Telefon<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -64,7 +64,7 @@
         <span class="expenses-bar__price">200,00zł</span>
       </div>
     </div>
-    <div class="expenses-box">
+    <div class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">Paliwo<span class="expenses-box__price">200zł</span></li>
         <li class="expenses-box__item">Ubezpieczenie
@@ -72,7 +72,7 @@
         <li class="expenses-box__item">Przegląd<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -88,14 +88,14 @@
         <span class="expenses-bar__price">200,00zł</span>
       </div>
     </div>
-    <div class="expenses-box">
+    <div class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">Sklep Lidl<span class="expenses-box__price">200zł</span></li>
         <li class="expenses-box__item">Biedronka<span class="expenses-box__price">200zł</span></li>
         <li class="expenses-box__item">Pizzeria<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -111,7 +111,7 @@
         <span class="expenses-bar__price">200,00zł</span>
       </div>
     </div>
-    <div class="expenses-box">
+    <div class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">Bluzka Cropp
           <span class="expenses-box__price">200zł</span></li>
@@ -121,7 +121,7 @@
           <span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
-    <div class="expenses-bar">
+    <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -137,7 +137,7 @@
         <span class="expenses-bar__price">200,00zł</span>
       </div>
     </div>
-    <div class="expenses-box">
+    <div class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">
           Wizyta u Lekarza<span class="expenses-box__price">200zł</span>
@@ -187,7 +187,6 @@ export default {
   background-color:#76beb7;
   width: 100%;
   margin: 0 auto 100px auto;
-  padding: 10px 0;
 }
 .expenses-bar{
   display: flex;
@@ -199,7 +198,6 @@ export default {
   &:first-child{
     border: 0;
   }
-
   &__icon{
     width: 30px;
     height: 30px;
@@ -214,20 +212,18 @@ export default {
   &__title{
     font-size: 19px;
     font-weight: 400;
+    color: #303030;
   }
   &__price{
     font-size: 16px;
     font-weight: 600;
-    color:#464646;;
+    color:#303030;
   }
   &--close{
     .box-icon{
       transform: rotate(-90deg);
     }
   }
-}
-.expenses-wrapper .expenses-bar::last-child{
-  background-color: #fff;
 }
 .box-icon{
   width: 10px;
@@ -254,6 +250,7 @@ export default {
 
   &--close{
     height: 0;
+    display: none;
     transform: scaleY(0) translateY(-100%);
   }
 }
