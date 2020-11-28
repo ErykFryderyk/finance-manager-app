@@ -7,10 +7,10 @@
     </div>
     <div class="box">
     <h2 class="box__month">Październik</h2>
-    <span class="box__label">Konto</span>
-    <h3 class="box__payment">2 130,<span>30</span> PLN</h3>
     <span class="box__label">Dostępne środki</span>
     <h2 class="box__rest-money">1 000,<span>20</span> PLN</h2>
+    <span class="box__label">Pensja</span>
+    <h3 class="box__payment">2 130,<span>30</span> PLN</h3>
     </div>
   </div>
 </template>
@@ -36,7 +36,7 @@ export default {
   &__btn{
     border: none;
     background-color: transparent;
-    color:blue;
+    color:#666666;
     outline:none;
     cursor: pointer;
     transition: color .3s ease;
