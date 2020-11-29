@@ -6,11 +6,11 @@
       </button>
     </div>
     <div class="box">
-    <h2 class="box__month">Październik</h2>
-    <span class="box__label">Dostępne środki</span>
-    <h2 class="box__rest-money">1 000,<span>20</span> PLN</h2>
-    <span class="box__label">Pensja</span>
-    <h3 class="box__payment">2 130,<span>30</span> PLN</h3>
+      <h2 class="box__month">Październik</h2>
+      <span class="box__label">Dostępne środki</span>
+      <h2 class="box__rest-money">1 000,<span>20</span> PLN</h2>
+      <span class="box__label">Pensja</span>
+      <h3 class="box__payment">2 130,<span>30</span> PLN</h3>
     </div>
   </div>
 </template>
@@ -22,7 +22,8 @@ export default {
 
 <style lang="scss" scoped>
 .wrapper{
-  background-color: #96ceb4;
+  background: rgb(182,230,208);
+  background: linear-gradient(140deg, #96ceb4  0%,  #5e8171 100%);
   width: 100%;
   min-height: 250px;
   margin: 0 auto 0 auto;
