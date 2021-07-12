@@ -36,16 +36,17 @@ export default {
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 70px;
+  height: 60px;
   background-color: black;
 }
 .navbar-btn{
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
   margin:2px;
   background: transparent;
   border: 0;
   color: white;
+  cursor:button;
 }
 .navbar-btn svg{
   fill:#fff;
