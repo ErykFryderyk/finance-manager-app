@@ -4,7 +4,9 @@
     <Money/>
     <ExpensesSection/>
     <NavbarSection/>
-    <MyBudgetModal/>
+    <MyBudgetModal style="display:none;"/>
+    <MyCategoryModal style="display:none;"/>
+    <MyModalAddItem/>
 </template>
 
 <script>
@@ -14,6 +16,8 @@ import MyMoney from './components/MyMoney.vue';
 import Expenses from './components/Expenses.vue';
 import Navbar from './components/NavBar.vue';
 import BudgetModal from './components/BudgetModal.vue';
+import CategoryModal from './components/CategoryModal.vue';
+import ModalAddItem from './components/ModalAddItem.vue';
 
 export default {
   name: 'App',
@@ -29,6 +33,8 @@ export default {
     ExpensesSection: Expenses,
     NavbarSection: Navbar,
     MyBudgetModal: BudgetModal,
+    MyCategoryModal: CategoryModal,
+    MyModalAddItem: ModalAddItem,
   },
 };
 </script>
