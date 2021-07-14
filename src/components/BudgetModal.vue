@@ -59,6 +59,10 @@ export default {
       color: #fff;
       font-size: 20px;
       padding: 5px;
+      transition: color .3s ease;
+      &:hover{
+        color:#26313a;
+      }
     }
     &__box{
       display: flex;
