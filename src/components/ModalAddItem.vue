@@ -1,15 +1,17 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div class="modal-wrapper">
     <div class="modal">
       <div class="modal__btn-box">
         <button class="modal__btn modal__close-btn">X</button>
       </div>
       <div class="modal__box">
-        <p>Wydatki</p>
-        <input type="text" placeholder="Nazwa" name="name-item">
-        <input type="number" placeholder="Wartość" name="value-item">
-        <select name="" id="">
+        <p class="modal__text-info">Wydatki</p>
+        <input class="input-text input-text__modal" type="text" placeholder="Nazwa" name="name-item">
+        <input class="input-text input-text__modal" type="number" placeholder="Wartość" name="value-item">
+        <select class="input-text input-text__modal" name="" id="">
           <option value="">- brak kategori -</option>
+          <option value="">Dom</option>
         </select>
         <div class="modal__add-btn-box">
           <button class="btn__add-budget-btn">DODAJ</button>
@@ -71,6 +73,34 @@ export default {
       width: 100%;
       display: flex;
       justify-content: flex-end;
+    }
+    &__text-info{
+      font-size: 23px;
+      margin-bottom: 20px;
+      color: #26313a;
+    }
+  }
+  .input-text{
+    background:transparent;
+    border: none;
+
+    &__modal{
+      width: 100%;
+      height: 40px;
+      border-bottom: 1px #016157 solid;
+      margin-bottom: 20px;
+      font-size: 23px;
+      color: #26313a;
+      padding: 0 50px 0 10px;
+      outline: none;
+      transition: box-shadow .3s ease;
+
+      &:focus{
+        box-shadow: 0px 10px 10px -11px #016157;
+      }
+      &::placeholder{
+        color: #016157;
+      }
     }
   }
   .btn__add-budget-btn{
