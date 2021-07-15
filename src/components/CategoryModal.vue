@@ -6,29 +6,37 @@
           <button class="modal__btn modal__close-btn">X</button>
         </div>
         <div class="modal__box">
-          <p>Utwórz nową kategorię:</p>
-          <input type="text">
-          <p>Wybierz ikonę:</p>
-          <ul>
-            <li>
-              <input class="radio-input" type="radio" name="cars" id="mustang" checked/>
-              <label class="radio-custom-label" for="mustang">
-                <img src="../assets/img/home.svg" alt="Mustang"/>
-              </label>
-            </li>
-            <li>
-              <input class="radio-input" type="radio" name="cars" id="mustang"/>
-              <label class="radio-custom-label" for="mustang">
-                <img src="../assets/img/home.svg" alt="Mustang"/>
-              </label>
-            </li>
-            <li>
-              <input class="radio-input" type="radio" name="cars" id="mustang"/>
-              <label class="radio-custom-label" for="mustang">
-                <img src="../assets/img/home.svg" alt="Mustang"/>
-              </label>
-            </li>
-          </ul>
+          <p class="modal__text-info">Utwórz nową kategorię:</p>
+          <input class="input-text input-text__modal" type="text" placeholder="Nazwa">
+          <p class="modal__text-info">Wybierz ikonę:</p>
+          <div class="modal__list">
+            <ul class="list">
+              <li class="list__item">
+                <input class="list__radio-input" type="radio" name="cars" id="mustang" checked/>
+                <label class="radio-custom-label" for="mustang">
+                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                </label>
+              </li>
+              <li class="list__item">
+                <input class="list__radio-input" type="radio" name="cars" id="mustang"/>
+                <label class="radio-custom-label" for="mustang">
+                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                </label>
+              </li>
+              <li class="list__item">
+                <input class="list__radio-input" type="radio" name="cars" id="mustang"/>
+                <label class="radio-custom-label" for="mustang">
+                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                </label>
+              </li>
+              <li class="list__item">
+                <input class="list__radio-input" type="radio" name="cars" id="mustang"/>
+                <label class="radio-custom-label" for="mustang">
+                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                </label>
+              </li>
+            </ul>
+          </div>
           <div class="modal__add-btn-box">
             <button class="btn__add-budget-btn">DODAJ</button>
           </div>
@@ -91,6 +99,46 @@ export default {
       width: 100%;
       display: flex;
       justify-content: flex-end;
+    }
+    &__list{
+      display: flex;
+    }
+  }
+  .input-text{
+    background:transparent;
+    border: none;
+
+    &__modal{
+      width: 100%;
+      height: 40px;
+      border-bottom: 1px #016157 solid;
+      margin-bottom: 20px;
+      font-size: 23px;
+      color: #26313a;
+      padding: 0 50px 0 10px;
+      outline: none;
+      transition: box-shadow .3s ease;
+
+      &:focus{
+        box-shadow: 0px 10px 10px -11px #016157;
+      }
+      &::placeholder{
+        color: #016157;
+      }
+    }
+  }
+  .list{
+    margin-top:20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    &__item{
+      list-style-type: none;
+      cursor: pointer;
+    }
+    &__radio-input{
+      display: none;
     }
   }
   .btn__add-budget-btn{
