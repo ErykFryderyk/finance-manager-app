@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable max-len -->
   <div>
     <div class="modal-wrapper">
       <div class="modal">
@@ -12,27 +13,21 @@
           <div class="modal__list">
             <ul class="list">
               <li class="list__item">
-                <input class="list__radio-input" type="radio" name="cars" id="mustang" checked/>
-                <label class="radio-custom-label" for="mustang">
-                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                <input class="list__radio-input" type="radio" name="radio" id="category_1" checked/>
+                <label class="custom-radio__label" for="category_1">
+                  <img src="../assets/img/home.svg" alt=""/>
                 </label>
               </li>
               <li class="list__item">
-                <input class="list__radio-input" type="radio" name="cars" id="mustang"/>
-                <label class="radio-custom-label" for="mustang">
-                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                <input class="list__radio-input" type="radio" name="radio" id="category_2"/>
+                <label class="custom-radio__label" for="category_2">
+                  <img src="../assets/img/home.svg" alt=""/>
                 </label>
               </li>
               <li class="list__item">
-                <input class="list__radio-input" type="radio" name="cars" id="mustang"/>
-                <label class="radio-custom-label" for="mustang">
-                  <img src="../assets/img/home.svg" alt="Mustang"/>
-                </label>
-              </li>
-              <li class="list__item">
-                <input class="list__radio-input" type="radio" name="cars" id="mustang"/>
-                <label class="radio-custom-label" for="mustang">
-                  <img src="../assets/img/home.svg" alt="Mustang"/>
+                <input class="list__radio-input" type="radio" name="radio" id="category_3"/>
+                <label class="custom-radio__label" for="category_3">
+                  <img src="../assets/img/home.svg" alt=""/>
                 </label>
               </li>
             </ul>
@@ -119,7 +114,7 @@ export default {
       outline: none;
       transition: box-shadow .3s ease;
 
-      &:focus{
+      &::focus{
         box-shadow: 0px 10px 10px -11px #016157;
       }
       &::placeholder{
@@ -133,12 +128,28 @@ export default {
     display: flex;
     justify-content: space-between;
     list-style-type: none;
+    margin:0;
+    padding:0;
     &__item{
       list-style-type: none;
-      cursor: pointer;
+
     }
     &__radio-input{
+      cursor: pointer;
       display: none;
+    }
+  }
+  .list__radio-input:checked ~ .custom-radio__label{
+      border-bottom: 1px solid #000;
+      box-shadow: 0px 7px 7px -7px #000;
+  }
+  .custom-radio{
+    &__label{
+      cursor:pointer;
+      transition: border-bottom .5s ease, box-shadow .5s ease;
+      &__label:focus{
+        outline: none;
+      }
     }
   }
   .btn__add-budget-btn{
