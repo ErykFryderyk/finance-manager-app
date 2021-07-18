@@ -24,6 +24,7 @@ export default {
   width: 100%;
   height: 60px;
   display: flex;
+  padding: 0px 10px;
   align-items: center;
   background-color: #009688;
   box-shadow: 0px 0px 10px 10px #363636;
@@ -32,6 +33,7 @@ export default {
   }
 
   &__title{
+    color: #1d1d1d;
     font-size: 24px;
     font-weight:500;
   }
