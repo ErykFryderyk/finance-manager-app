@@ -1,6 +1,6 @@
 <template>
   <div class="expenses-wrapper">
-    <div class="expenses-bar expenses-bar--close">
+    <div v-for="item in items" v-bind:key="item.id" class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -10,10 +10,10 @@
         345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
         </svg>
       </div>
-      <img class="expenses-bar__icon" src="../assets/img/home.svg" alt="">
+      <img class="expenses-bar__icon" :src="item.icon" alt="">
       <div class="expenses-bar__item">
-        <h3 class="expenses-bar__title">Dom</h3>
-        <span class="expenses-bar__price">200,00zł</span>
+        <h3 class="expenses-bar__title">{{ item.title }}</h3>
+        <span class="expenses-bar__price">{{ item.totalPrice }} zł</span>
       </div>
     </div>
     <div class="expenses-box expenses-box--close">
@@ -22,7 +22,7 @@
         <li class="expenses-box__item">Śmieci<span class="expenses-box__price">200zł</span></li>
       </ul>
     </div>
-    <div class="expenses-bar expenses-bar--close">
+    <!-- <div class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="" xml:space="preserve">
         <path  d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -172,13 +172,32 @@
           Nowy rower<span class="expenses-box__price">200zł</span>
         </li>
       </ul>
-    </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 export default {
   name: 'Expenses',
+  data() {
+    return {
+      image: 'https://picsum.photos/id/1005/600/200',
+      items: [
+        {
+          icon: '/img/home.ab898512.svg',
+          title: 'Mieszkanie',
+          totalPrice: 3430,
+          id: 1,
+        },
+        {
+          icon: '/img/home.ab898512.svg',
+          title: 'Dziewczyna',
+          totalPrice: 20,
+          id: 1,
+        },
+      ],
+    };
+  },
 };
 </script>
 
