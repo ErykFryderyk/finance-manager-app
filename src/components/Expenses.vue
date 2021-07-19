@@ -184,7 +184,6 @@ export default {
 
 <style lang="scss" scoped>
 .expenses-wrapper{
-  background-color:#76beb7;
   width: 100%;
   margin: 0 auto 100px auto;
 }
