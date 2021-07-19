@@ -1,12 +1,12 @@
 <template>
-    <Background />
-    <Header/>
-    <Money/>
-    <ExpensesSection/>
-    <NavbarSection/>
-    <MyBudgetModal style="display:none;"/>
-    <MyCategoryModal style="display:none;"/>
-    <MyModalAddItem/>
+    <HeroBackground />
+    <HeaderSection/>
+    <MyMoney/>
+    <Expenses/>
+    <BudgetModal v-if="isVisibility"/>
+    <CategoryModal v-if="isVisibility"/>
+    <ModalAddItem v-if="isVisibility"/>
+    <Navbar/>
 </template>
 
 <script>
@@ -23,18 +23,18 @@ export default {
   name: 'App',
   data() {
     return {
-      title: 'Hello Grzegorz',
+      isVisibility: false,
     };
   },
   components: {
-    Background: HeroBackground,
-    Header: HeaderSection,
-    Money: MyMoney,
-    ExpensesSection: Expenses,
-    NavbarSection: Navbar,
-    MyBudgetModal: BudgetModal,
-    MyCategoryModal: CategoryModal,
-    MyModalAddItem: ModalAddItem,
+    HeroBackground,
+    HeaderSection,
+    MyMoney,
+    Expenses,
+    Navbar,
+    BudgetModal,
+    CategoryModal,
+    ModalAddItem,
   },
 };
 </script>
