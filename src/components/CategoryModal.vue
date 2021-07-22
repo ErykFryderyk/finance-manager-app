@@ -1,6 +1,5 @@
 <template>
   <!-- eslint-disable max-len -->
-  <div>
     <div class="modal-wrapper">
       <div class="modal">
         <div class="modal__btn-box">
@@ -38,7 +37,6 @@
         </div>
       </div>
     </div>
-  </div>
 </template>
 
 <script>
@@ -97,6 +95,7 @@ export default {
     }
     &__list{
       display: flex;
+      margin: 10px 0;
     }
   }
   .input-text{
@@ -114,7 +113,7 @@ export default {
       outline: none;
       transition: box-shadow .3s ease;
 
-      &::focus{
+      &:focus{
         box-shadow: 0px 10px 10px -11px #016157;
       }
       &::placeholder{
