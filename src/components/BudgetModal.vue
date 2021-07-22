@@ -2,13 +2,22 @@
   <div class="modal-wrapper">
     <div class="modal">
       <div class="modal__btn-box">
-        <button class="modal__btn modal__close-btn">X</button>
+        <button
+          @click="closeModal"
+          class="modal__btn modal__close-btn"
+        >
+          X
+        </button>
       </div>
       <div class="modal__box">
         <p class="modal__text-info">Twoja miesięczna wypłata</p>
         <input class="input-text input-text__modal" type="number" placeholder="Wprowadź wartość">
         <div class="modal__add-btn-box">
-          <button class="btn__add-budget-btn">DODAJ</button>
+          <button
+            @click="closeModal"
+            class="btn__add-budget-btn">
+              DODAJ
+            </button>
         </div>
       </div>
     </div>
@@ -18,6 +27,11 @@
 <script>
 export default {
   name: 'BudgetModal',
+  methods: {
+    closeModal() {
+      this.$emit('close-modal');
+    },
+  },
 };
 </script>
 
@@ -40,7 +54,7 @@ export default {
     box-shadow: 0px 0px 15px 10px #00000075;
     transform: scale(0);
     animation-name: show-up;
-    animation-duration: .5s;
+    animation-duration: .3s;
     animation-fill-mode: forwards;
     &__btn-box{
       display: flex;
