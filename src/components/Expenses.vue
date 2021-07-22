@@ -181,7 +181,6 @@ export default {
   name: 'Expenses',
   data() {
     return {
-      image: 'https://picsum.photos/id/1005/600/200',
       items: [
         {
           icon: '/img/home.ab898512.svg',
@@ -193,7 +192,13 @@ export default {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
           totalPrice: 20,
-          id: 1,
+          id: 2,
+        },
+        {
+          icon: '/img/home.ab898512.svg',
+          title: 'Dziewczyna',
+          totalPrice: 20,
+          id: 3,
         },
       ],
     };
@@ -211,11 +216,9 @@ export default {
   align-items: center;
   height: 50px;
   cursor:pointer;
-  border-top: 1px solid #0000001f;
+  border-bottom: 1px solid #0000001f;
+  transition: background-color .3s ease;
 
-  &:first-child{
-    border: 0;
-  }
   &__icon{
     width: 30px;
     height: 30px;
@@ -241,6 +244,10 @@ export default {
     .box-icon{
       transform: rotate(-90deg);
     }
+  }
+
+  &:hover{
+    background-color: #fff;
   }
 }
 .box-icon{
