@@ -1,12 +1,15 @@
 <template>
     <HeroBackground />
     <HeaderSection/>
-    <MyMoney/>
-    <Expenses/>
-    <BudgetModal v-if="isVisibility"/>
-    <CategoryModal v-if="isVisibility"/>
-    <ModalAddItem v-if="isVisibility"/>
-    <Navbar/>
+    <MyMoney :payment="paymentValue"/>
+    <Expenses />
+    <BudgetModal @close-modal="showModal"
+      v-show="budgetModalVisibility"
+    />
+    <h1>{{ paymentValue }}</h1>
+    <!-- <CategoryModal /> -->
+    <!-- <ModalAddItem /> -->
+    <Navbar @showModal="showModal"/>
 </template>
 
 <script>
@@ -16,16 +19,11 @@ import MyMoney from './components/MyMoney.vue';
 import Expenses from './components/Expenses.vue';
 import Navbar from './components/NavBar.vue';
 import BudgetModal from './components/BudgetModal.vue';
-import CategoryModal from './components/CategoryModal.vue';
-import ModalAddItem from './components/ModalAddItem.vue';
+// import CategoryModal from './components/CategoryModal.vue';
+// import ModalAddItem from './components/ModalAddItem.vue';
 
 export default {
   name: 'App',
-  data() {
-    return {
-      isVisibility: false,
-    };
-  },
   components: {
     HeroBackground,
     HeaderSection,
@@ -33,8 +31,22 @@ export default {
     Expenses,
     Navbar,
     BudgetModal,
-    CategoryModal,
-    ModalAddItem,
+    // CategoryModal,
+    // ModalAddItem,
+  },
+  data() {
+    return {
+      budgetModalVisibility: false,
+      paymentValue: 2001,
+    };
+  },
+  methods: {
+    showModal(value) {
+      if (value !== undefined) {
+        this.paymentValue = value;
+      }
+      this.budgetModalVisibility = !this.budgetModalVisibility;
+    },
   },
 };
 </script>
