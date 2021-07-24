@@ -4,14 +4,16 @@
       <div class="modal__btn-box">
         <button
           @click="closeModal"
-          class="modal__btn modal__close-btn"
-        >
-          X
-        </button>
+          class="modal__btn modal__close-btn">X</button>
       </div>
       <div class="modal__box">
         <p class="modal__text-info">Twoja miesięczna wypłata</p>
-        <input class="input-text input-text__modal" type="number" placeholder="Wprowadź wartość">
+        <input
+          v-model="value"
+          class="input-text input-text__modal"
+          type="number"
+          placeholder="Wprowadź wartość"
+        >
         <div class="modal__add-btn-box">
           <button
             @click="closeModal"
@@ -27,9 +29,17 @@
 <script>
 export default {
   name: 'BudgetModal',
+  data() {
+    return {
+      value: '',
+    };
+  },
   methods: {
     closeModal() {
-      this.$emit('close-modal');
+      if (this.value !== '') {
+        this.$emit('close-modal', this.value);
+        this.value = '';
+      }
     },
   },
 };
