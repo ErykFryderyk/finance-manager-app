@@ -10,7 +10,7 @@
         <p class="modal__text-info">Twoja miesięczna wypłata</p>
         <input
           v-model="value"
-          class="input-text input-text__modal"
+          class="input-text input-text__modal input-text__modal--error"
           type="number"
           placeholder="Wprowadź wartość"
         >
@@ -122,9 +122,20 @@ export default {
 
       &:focus{
         box-shadow: 0px 10px 10px -11px #016157;
+        border-bottom: 1px #016157 solid;
+
       }
       &::placeholder{
         color: #016157;
+        font-size: 19px;
+      }
+      &--error {
+        box-shadow: 0px 10px 10px -11px orange;
+        border-bottom: 1px orange solid;
+        &:focus{
+          box-shadow: 0px 10px 10px -11px orange;
+          border-bottom: 1px orange solid;
+        }
       }
     }
   }
