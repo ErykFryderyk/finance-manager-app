@@ -10,7 +10,8 @@
         <p class="modal__text-info">Twoja miesięczna wypłata</p>
         <input
           v-model="value"
-          class="input-text input-text__modal input-text__modal--error"
+          class="input-text input-text__modal"
+          :class="{ error: isError}"
           type="number"
           placeholder="Wprowadź wartość"
         >
@@ -32,6 +33,7 @@ export default {
   data() {
     return {
       value: '',
+      isError: false,
     };
   },
   methods: {
@@ -39,6 +41,9 @@ export default {
       if (this.value !== '') {
         this.$emit('close-modal', this.value);
         this.value = '';
+        this.isError = false;
+      } else {
+        this.isError = true;
       }
     },
   },
@@ -129,14 +134,14 @@ export default {
         color: #016157;
         font-size: 19px;
       }
-      &--error {
-        box-shadow: 0px 10px 10px -11px orange;
-        border-bottom: 1px orange solid;
-        &:focus{
-          box-shadow: 0px 10px 10px -11px orange;
-          border-bottom: 1px orange solid;
-        }
-      }
+    }
+  }
+  .error {
+    box-shadow: 0px 10px 10px -11px orange;
+    border-bottom: 1px orange solid;
+    &:focus{
+      box-shadow: 0px 10px 10px -11px orange;
+      border-bottom: 1px orange solid;
     }
   }
   .btn__add-budget-btn{
