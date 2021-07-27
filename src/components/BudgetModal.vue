@@ -17,7 +17,7 @@
         >
         <div class="modal__add-btn-box">
           <button
-            @click="closeModal"
+            @click="actionModal"
             class="btn__add-budget-btn">
               DODAJ
             </button>
@@ -37,7 +37,7 @@ export default {
     };
   },
   methods: {
-    closeModal() {
+    actionModal() {
       if (this.value !== '') {
         this.$emit('close-modal', this.value);
         this.value = '';
@@ -45,6 +45,9 @@ export default {
       } else {
         this.isError = true;
       }
+    },
+    closeModal() {
+      this.$emit('close-modal');
     },
   },
 };
