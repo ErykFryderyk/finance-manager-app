@@ -6,9 +6,8 @@
     <BudgetModal @close-modal="showModal"
       v-show="budgetModalVisibility"
     />
-    <h1>{{ paymentValue }}</h1>
-    <!-- <CategoryModal /> -->
-    <!-- <ModalAddItem /> -->
+    <CategoryModal v-show="categoryModalVisibility"/>
+    <ModalAddItem v-if="addItemModalVisibility"/>
     <Navbar @showModal="showModal"/>
 </template>
 
@@ -19,8 +18,8 @@ import MyMoney from './components/MyMoney.vue';
 import Expenses from './components/Expenses.vue';
 import Navbar from './components/NavBar.vue';
 import BudgetModal from './components/BudgetModal.vue';
-// import CategoryModal from './components/CategoryModal.vue';
-// import ModalAddItem from './components/ModalAddItem.vue';
+import CategoryModal from './components/CategoryModal.vue';
+import ModalAddItem from './components/ModalAddItem.vue';
 
 export default {
   name: 'App',
@@ -31,13 +30,15 @@ export default {
     Expenses,
     Navbar,
     BudgetModal,
-    // CategoryModal,
-    // ModalAddItem,
+    CategoryModal,
+    ModalAddItem,
   },
   data() {
     return {
-      budgetModalVisibility: false,
       paymentValue: 2001,
+      budgetModalVisibility: false,
+      categoryModalVisibility: false,
+      addItemModalVisibility: false,
     };
   },
   methods: {
