@@ -1,6 +1,6 @@
 <template>
   <div class="expenses-wrapper">
-    <div v-for="item in items" v-bind:key="item.id" class="expenses-bar expenses-bar--close">
+    <div v-for="item in items" :key="item.id" class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
