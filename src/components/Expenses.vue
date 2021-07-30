@@ -1,6 +1,10 @@
 <template>
   <div class="expenses-wrapper">
-    <div v-for="item in items" :key="item.id" class="expenses-bar expenses-bar--close">
+    <div
+      v-for="item in items"
+      :key="item.id"
+      @click="clickEvent(item.id)"
+      class="expenses-bar expenses-bar--close">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -13,10 +17,16 @@
       <img class="expenses-bar__icon" :src="item.icon" alt="">
       <div class="expenses-bar__item">
         <h3 class="expenses-bar__title">{{ item.title }}</h3>
+        <p :class="{
+          red: item.showClass,
+        }">Lorem, ipsum.</p>
         <span class="expenses-bar__price">{{ item.totalPrice }} zł</span>
       </div>
     </div>
-    <div class="expenses-box expenses-box--close">
+    <div :class="{
+        hide: item.showClass,
+      }"
+    class="expenses-box expenses-box--close">
       <ul class="expenses-box__list">
         <li class="expenses-box__item">Czynsz<span class="expenses-box__price">200zł</span></li>
         <li class="expenses-box__item">Śmieci<span class="expenses-box__price">200zł</span></li>
@@ -186,22 +196,33 @@ export default {
           icon: '/img/home.ab898512.svg',
           title: 'Mieszkanie',
           totalPrice: 3430,
+          showClass: false,
           id: 1,
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
-          totalPrice: 20,
+          totalPrice: 220,
+          showClass: false,
           id: 2,
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
-          totalPrice: 20,
+          totalPrice: 20432,
+          showClass: false,
           id: 3,
         },
       ],
     };
+  },
+  methods: {
+    clickEvent(id) {
+      const index = this.items.findIndex((el) => el.id === id);
+      console.log(this.items[index].showClass);
+      this.items[index].showClass = true;
+      console.log(this.items[index].showClass);
+    },
   },
 };
 </script>
@@ -278,5 +299,11 @@ export default {
     display: none;
     transform: scaleY(0) translateY(-100%);
   }
+}
+.hide{
+  display:none;
+}
+.red{
+  color: red;
 }
 </style>
