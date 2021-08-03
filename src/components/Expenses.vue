@@ -3,9 +3,10 @@
   <div
     class="expenses-wrapper"
     v-for="item in items"
-    :key="item.id"
-    @click="clickEvent(item.id)">
-    <div class="expenses-bar" :class="{ active: item.hide}">
+    :key="item.id">
+    <div class="expenses-bar"
+      :class="{ active: item.hide}"
+      @click="clickEvent(item.id)">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
