@@ -1,10 +1,11 @@
+/* eslint-disable max-len */
 <template>
-  <div class="expenses-wrapper">
-    <div
-      v-for="item in items"
-      :key="item.id"
-      @click="clickEvent(item.id)"
-      class="expenses-bar expenses-bar--close">
+  <div
+    class="expenses-wrapper"
+    v-for="item in items"
+    :key="item.id"
+    @click="clickEvent(item.id)">
+    <div class="expenses-bar" :class="{ active: item.hide}">
       <div class="box-icon">
         <svg class="box-icon__arrow" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="451.847px" height="451.847px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve">
         <path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,
@@ -17,19 +18,20 @@
       <img class="expenses-bar__icon" :src="item.icon" alt="">
       <div class="expenses-bar__item">
         <h3 class="expenses-bar__title">{{ item.title }}</h3>
-        <p :class="{
-          red: item.showClass,
-        }">Lorem, ipsum.</p>
         <span class="expenses-bar__price">{{ item.totalPrice }} zł</span>
       </div>
     </div>
-    <div :class="{
-        hide: item.showClass,
-      }"
-    class="expenses-box expenses-box--close">
+    <div class="expenses-box"
+      :class="{hide: item.hide}">
       <ul class="expenses-box__list">
-        <li class="expenses-box__item">Czynsz<span class="expenses-box__price">200zł</span></li>
-        <li class="expenses-box__item">Śmieci<span class="expenses-box__price">200zł</span></li>
+        <li
+          class="expenses-box__item"
+          v-for="el in item.elems" :key="el.id">
+          {{ el.name }}
+          <span class="expenses-box__price">
+            {{ el.price }} zł
+          </span>
+        </li>
       </ul>
     </div>
     <!-- <div class="expenses-bar expenses-bar--close">
@@ -196,22 +198,43 @@ export default {
           icon: '/img/home.ab898512.svg',
           title: 'Mieszkanie',
           totalPrice: 3430,
-          showClass: false,
+          hide: false,
           id: 1,
+          elems: [
+            {
+              id: Math.random(),
+              name: 'Pierogi',
+              price: 200,
+            },
+          ],
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
           totalPrice: 220,
-          showClass: false,
+          hide: false,
           id: 2,
+          elems: [
+            {
+              id: Math.random(),
+              name: 'Saszłyk',
+              price: 12,
+            },
+          ],
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
           totalPrice: 20432,
-          showClass: false,
+          hide: false,
           id: 3,
+          elems: [
+            {
+              id: Math.random(),
+              name: 'Kopytk',
+              price: 123,
+            },
+          ],
         },
       ],
     };
@@ -219,9 +242,7 @@ export default {
   methods: {
     clickEvent(id) {
       const index = this.items.findIndex((el) => el.id === id);
-      console.log(this.items[index].showClass);
-      this.items[index].showClass = true;
-      console.log(this.items[index].showClass);
+      this.items[index].hide = !this.items[index].hide;
     },
   },
 };
@@ -230,7 +251,7 @@ export default {
 <style lang="scss" scoped>
 .expenses-wrapper{
   width: 100%;
-  margin: 0 auto 100px auto;
+  border-bottom: 1px solid #0000001f;
 }
 .expenses-bar{
   display: flex;
@@ -261,12 +282,11 @@ export default {
     font-weight: 600;
     color:#303030;
   }
-  &--close{
+  &--active{
     .box-icon{
       transform: rotate(-90deg);
     }
   }
-
   &:hover{
     background-color: #fff;
   }
@@ -279,14 +299,20 @@ export default {
   align-items: center;
   margin: 0 10px;
   fill:  #00000040;
+  transition: transform .3s ease;
+}
+.active .box-icon{
+    transform: rotate(-90deg);
 }
 .expenses-box{
   width: 100%;
+  background-color: #00000040;;
   transition: transform 0.3s ease;
 
   &__list{
     list-style: none;
-    margin: 5px 30px;
+    padding: 5px 0;
+    margin:0 30px;
   }
 
   &__item{
@@ -302,8 +328,5 @@ export default {
 }
 .hide{
   display:none;
-}
-.red{
-  color: red;
 }
 </style>
