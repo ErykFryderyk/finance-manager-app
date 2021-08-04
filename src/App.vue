@@ -3,12 +3,21 @@
     <HeaderSection/>
     <MyMoney :payment="paymentValue"/>
     <Expenses />
-    <BudgetModal @close-modal="showModal"
-      v-show="budgetModalVisibility"
+    <BudgetModal
+      @close-modal="showModal"
+      v-if="budgetModalVisibility"
     />
-    <CategoryModal v-show="categoryModalVisibility"/>
-    <ModalAddItem v-if="addItemModalVisibility"/>
-    <Navbar @showModal="showModal"/>
+    <CategoryModal
+      v-if="categoryModalVisibility"
+    />
+    <ModalAddItem
+      v-if="addItemModalVisibility"
+    />
+    <Navbar
+      @budget-open="budgetModalVisibility = true"
+      @category-open="categoryModalVisibility = true "
+      @add-item-open="addItemModalVisibility = true"
+    />
 </template>
 
 <script>
