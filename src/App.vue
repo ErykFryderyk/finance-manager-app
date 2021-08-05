@@ -8,10 +8,12 @@
       v-if="budgetModalVisibility"
     />
     <CategoryModal
+      @close-category-modal="categoryModalVisibility = false"
       v-if="categoryModalVisibility"
     />
     <ModalAddItem
       v-if="addItemModalVisibility"
+      @close-add-item-modal="addItemModalVisibility = false"
     />
     <Navbar
       @budget-open="budgetModalVisibility = true"

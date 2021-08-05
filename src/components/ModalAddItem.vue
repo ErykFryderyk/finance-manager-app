@@ -3,7 +3,10 @@
   <div class="modal-wrapper">
     <div class="modal">
       <div class="modal__btn-box">
-        <button class="modal__btn modal__close-btn">X</button>
+        <button
+          class="modal__btn modal__close-btn"
+          @click="$emit('close-add-item-modal')"
+        >X</button>
       </div>
       <div class="modal__box">
         <p class="modal__text-info">Wydatki</p>

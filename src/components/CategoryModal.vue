@@ -3,7 +3,10 @@
     <div class="modal-wrapper">
       <div class="modal">
         <div class="modal__btn-box">
-          <button class="modal__btn modal__close-btn">X</button>
+          <button
+            class="modal__btn modal__close-btn"
+            @click="$emit('close-category-modal')"
+          >X</button>
         </div>
         <div class="modal__box">
           <p class="modal__text-info">Utwórz nową kategorię:</p>
@@ -42,6 +45,12 @@
 <script>
 export default {
   name: 'CategoryModal',
+  methods: {
+    closeModal() {
+      // this.$emit('close-modal');
+      console.log('close');
+    },
+  },
 };
 </script>
 
