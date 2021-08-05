@@ -3,7 +3,7 @@
     <div class="modal">
       <div class="modal__btn-box">
         <button
-          @click="closeModal"
+          @click="$emit('close-modal')"
           class="modal__btn modal__close-btn">X</button>
       </div>
       <div class="modal__box">
@@ -45,9 +45,6 @@ export default {
       } else {
         this.isError = true;
       }
-    },
-    closeModal() {
-      this.$emit('close-modal');
     },
   },
 };
