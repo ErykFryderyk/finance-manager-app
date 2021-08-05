@@ -192,6 +192,9 @@
 <script>
 export default {
   name: 'Expenses',
+  props: [
+    'categoryName',
+  ],
   data() {
     return {
       items: [
@@ -199,7 +202,7 @@ export default {
           icon: '/img/home.ab898512.svg',
           title: 'Mieszkanie',
           totalPrice: 3430,
-          hide: false,
+          hide: true,
           id: 1,
           elems: [
             {
@@ -212,8 +215,8 @@ export default {
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
-          totalPrice: 220,
-          hide: false,
+          totalPrice: 13,
+          hide: true,
           id: 2,
           elems: [
             {
@@ -221,13 +224,18 @@ export default {
               name: 'Saszłyk',
               price: 12,
             },
+            {
+              id: Math.random(),
+              name: 'Kupa',
+              price: 1,
+            },
           ],
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
           totalPrice: 20432,
-          hide: false,
+          hide: true,
           id: 3,
           elems: [
             {
@@ -240,10 +248,35 @@ export default {
       ],
     };
   },
+  watch: {
+    categoryName(val, oldVal) {
+      if (val !== oldVal) {
+        this.items.push({
+          id: Math.random(),
+          title: val,
+          icon: '/img/home.ab898512.svg',
+          totalPrice: 0,
+          hide: true,
+          elems: [
+            {
+              id: Math.random(), name: 'dodany', price: 0,
+            },
+          ],
+        });
+      }
+    },
+  },
   methods: {
     clickEvent(id) {
       const index = this.items.findIndex((el) => el.id === id);
       this.items[index].hide = !this.items[index].hide;
+    },
+    createNewExpensesBar() {
+      console.log(this.categoryName);
+      this.items.push({
+        id: Math.random(),
+        name: this.categoryName,
+      });
     },
   },
 };

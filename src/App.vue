@@ -2,13 +2,16 @@
     <HeroBackground />
     <HeaderSection/>
     <MyMoney :payment="paymentValue"/>
-    <Expenses />
+    <Expenses
+      :categoryName="categoryName"
+    />
     <BudgetModal
       @close-modal="showModal"
       v-if="budgetModalVisibility"
     />
     <CategoryModal
       @close-category-modal="categoryModalVisibility = false"
+      @add-new-category="addNewCategory"
       v-if="categoryModalVisibility"
     />
     <ModalAddItem
@@ -47,6 +50,7 @@ export default {
   data() {
     return {
       paymentValue: 2001,
+      categoryName: '',
       budgetModalVisibility: false,
       categoryModalVisibility: false,
       addItemModalVisibility: false,
@@ -58,6 +62,10 @@ export default {
         this.paymentValue = value;
       }
       this.budgetModalVisibility = !this.budgetModalVisibility;
+    },
+    addNewCategory(value) {
+      this.categoryName = value;
+      this.categoryModalVisibility = false;
     },
   },
 };

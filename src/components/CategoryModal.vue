@@ -9,8 +9,14 @@
           >X</button>
         </div>
         <div class="modal__box">
+
           <p class="modal__text-info">Utwórz nową kategorię:</p>
-          <input class="input-text input-text__modal" type="text" placeholder="Nazwa">
+          <input
+            class="input-text input-text__modal"
+            :class="{error: isError}"
+            v-model="value"
+            type="text" placeholder="Nazwa"
+          >
           <p class="modal__text-info">Wybierz ikonę:</p>
           <div class="modal__list">
             <ul class="list">
@@ -35,7 +41,10 @@
             </ul>
           </div>
           <div class="modal__add-btn-box">
-            <button class="btn__add-budget-btn">DODAJ</button>
+            <button
+              class="btn__add-budget-btn"
+              @click="sendAction"
+            >DODAJ</button>
           </div>
         </div>
       </div>
@@ -45,10 +54,21 @@
 <script>
 export default {
   name: 'CategoryModal',
+  data() {
+    return {
+      value: '',
+      isError: false,
+    };
+  },
   methods: {
-    closeModal() {
-      // this.$emit('close-modal');
-      console.log('close');
+    sendAction() {
+      if (this.value !== '') {
+        this.$emit('add-new-category', this.value);
+        this.value = '';
+        this.isError = false;
+      } else {
+        this.isError = true;
+      }
     },
   },
 };
@@ -158,6 +178,14 @@ export default {
       &__label:focus{
         outline: none;
       }
+    }
+  }
+  .error {
+    box-shadow: 0px 10px 10px -11px orange;
+    border-bottom: 1px orange solid;
+    &:focus{
+      box-shadow: 0px 10px 10px -11px orange;
+      border-bottom: 1px orange solid;
     }
   }
   .btn__add-budget-btn{
