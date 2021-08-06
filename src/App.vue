@@ -1,9 +1,14 @@
 <template>
     <HeroBackground />
     <HeaderSection/>
-    <MyMoney :payment="paymentValue"/>
+    <MyMoney
+      :payment="paymentValue"
+      :soldo="finalSoldo"
+
+    />
     <Expenses
       :categoryName="categoryName"
+      @send-soldo="updateSoldo"
     />
     <BudgetModal
       @close-modal="showModal"
@@ -49,6 +54,7 @@ export default {
   },
   data() {
     return {
+      finalSoldo: 200,
       paymentValue: 2001,
       categoryName: '',
       budgetModalVisibility: false,
@@ -66,6 +72,9 @@ export default {
     addNewCategory(value) {
       this.categoryName = value;
       this.categoryModalVisibility = false;
+    },
+    updateSoldo(value) {
+      this.finalSoldo = value;
     },
   },
 };

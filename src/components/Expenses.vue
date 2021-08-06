@@ -186,6 +186,8 @@
         </li>
       </ul>
     </div> -->
+    <button @click="getSoldo">CLick</button>
+    {{soldo}}
   </div>
 </template>
 
@@ -197,11 +199,12 @@ export default {
   ],
   data() {
     return {
+      soldo: null,
       items: [
         {
           icon: '/img/home.ab898512.svg',
           title: 'Mieszkanie',
-          totalPrice: 3430,
+          totalPrice: 10,
           hide: true,
           id: 1,
           elems: [
@@ -215,7 +218,7 @@ export default {
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
-          totalPrice: 13,
+          totalPrice: 10,
           hide: true,
           id: 2,
           elems: [
@@ -234,7 +237,7 @@ export default {
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dziewczyna',
-          totalPrice: 20432,
+          totalPrice: 10,
           hide: true,
           id: 3,
           elems: [
@@ -277,6 +280,15 @@ export default {
         id: Math.random(),
         name: this.categoryName,
       });
+    },
+    getSoldo() {
+      let sum = 0;
+      this.items.forEach((el) => {
+        sum += el.totalPrice;
+      });
+      console.log(sum);
+      this.soldo = sum;
+      this.$emit('send-soldo', this.soldo);
     },
   },
 };

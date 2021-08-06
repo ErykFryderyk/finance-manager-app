@@ -2,21 +2,29 @@
   <div class="wrapper">
     <div class="previous">
       <button class="previous__btn">
-        <span>&laquo;</span> Poprzedni
+        <span>&laquo;</span> Poprzedni miesiąc
       </button>
     </div>
     <div class="box">
       <h2 class="box__month">Październik</h2>
-      <span class="box__label">Dostępne środki</span>
-      <h2 class="box__rest-money">1 000,<span>20</span> PLN</h2>
-      <span class="box__label">Pensja</span>
-      <h3 class="box__payment">2 130,<span>30</span> PLN</h3>
+      <span class="box__label">Pozostało</span>
+      <h2 class="box__rest-money">{{ soldo }} PLN</h2>
+      <span class="box__label">Miesięczna wypłata</span>
+      <h3 class="box__payment">{{ payment }} PLN</h3>
     </div>
   </div>
 </template>
 <script>
 export default {
   name: 'my-money',
+  props: [
+    'payment',
+    'soldo',
+  ],
+  data() {
+    return {
+    };
+  },
 };
 </script>
 
@@ -50,6 +58,7 @@ export default {
     }
   }
 }
+
 .box{
   width: 100%;
   padding: 0 20px;
@@ -74,6 +83,5 @@ export default {
     color: #26313a;
     font-weight: 500;
   }
-
 }
 </style>
