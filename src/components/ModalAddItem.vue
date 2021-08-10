@@ -10,14 +10,30 @@
       </div>
       <div class="modal__box">
         <p class="modal__text-info">Wydatki</p>
-        <input class="input-text input-text__modal" type="text" placeholder="Nazwa" name="name-item">
-        <input class="input-text input-text__modal" type="number" placeholder="Wartość" name="value-item">
-        <select class="input-text input-text__modal" name="" id="">
-          <option value="">- brak kategori -</option>
-          <option value="">Dom</option>
+        <input
+          v-model="itemName"
+          class="input-text input-text__modal"
+          type="text" placeholder="Nazwa" name="name-item">
+        <input
+          v-model="value"
+          class="input-text input-text__modal" type="number" placeholder="Wartość" name="value-item">
+        <select
+          v-model="selectedValue"
+          class="input-text input-text__modal" name="">
+          <option disabled>- brak kategori -</option>
+          <option
+            v-for="item in selectItems" :key="item.value">
+            {{item.category}}
+          </option>
+          <!-- <option value="2"></option> -->
+          <!-- <option value="3">Dom</option> -->
         </select>
         <div class="modal__add-btn-box">
-          <button class="btn__add-budget-btn">DODAJ</button>
+          <button
+            @click="$emit('add-new-item', itemName, value, selectedValue)"
+            class="btn__add-budget-btn"
+          >DODAJ</button>
+          {{selectedValue}}
         </div>
       </div>
     </div>
@@ -27,6 +43,22 @@
 <script>
 export default {
   name: 'ModalAddItem',
+  props: ['categories'],
+  data() {
+    return {
+      itemName: '',
+      value: '',
+      selectedValue: '',
+      selectItems: [
+        {
+          value: 1, category: 'Mieszkanie',
+        },
+        {
+          value: 2, category: 'Samochód',
+        },
+      ],
+    };
+  },
 };
 </script>
 
