@@ -1,14 +1,15 @@
+/* eslint-disable vue/script-setup-uses-vars */
 <template>
     <HeroBackground />
     <HeaderSection/>
     <MyMoney
       :payment="paymentValue"
       :soldo="finalSoldo"
-
     />
     <Expenses
       :categoryName="categoryName"
       @send-soldo="updateSoldo"
+      @category-out="addArrayInside"
     />
     <BudgetModal
       @close-modal="showModal"
@@ -20,8 +21,10 @@
       v-if="categoryModalVisibility"
     />
     <ModalAddItem
+      :arrayCategory="elItems"
       v-if="addItemModalVisibility"
       @close-add-item-modal="addItemModalVisibility = false"
+      @add-new-item="showValue"
     />
     <Navbar
       @budget-open="budgetModalVisibility = true"
@@ -60,6 +63,7 @@ export default {
       budgetModalVisibility: false,
       categoryModalVisibility: false,
       addItemModalVisibility: false,
+      elItems: [],
     };
   },
   methods: {
@@ -75,6 +79,10 @@ export default {
     },
     updateSoldo(value) {
       this.finalSoldo = value;
+    },
+    addArrayInside(arrayFromExpanses) {
+      this.elItems = arrayFromExpanses;
+      console.log(this.elItems);
     },
   },
 };
