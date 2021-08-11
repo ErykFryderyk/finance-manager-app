@@ -17,12 +17,9 @@
         <input
           v-model="value"
           class="input-text input-text__modal" type="number" placeholder="Wartość" name="value-item">
-        <select
-          v-model="selectedValue"
-          class="input-text input-text__modal" name="">
+        <select v-model="selectedValue" class="input-text input-text__modal" name="">
           <option disabled>- brak kategori -</option>
-          <option
-            v-for="item in selectItems" :key="item.value">
+          <option v-for="item in selectItems" :value="item.category" :key="item.value">
             {{item.category}}
           </option>
           <!-- <option value="2"></option> -->
@@ -33,7 +30,7 @@
             @click="$emit('add-new-item', itemName, value, selectedValue)"
             class="btn__add-budget-btn"
           >DODAJ</button>
-          {{selectedValue}}
+          <button @click="show">casd</button>
         </div>
       </div>
     </div>
@@ -43,20 +40,21 @@
 <script>
 export default {
   name: 'ModalAddItem',
-  props: ['categories'],
+  props: ['categories', 'arrayCategory'],
   data() {
     return {
       itemName: '',
       value: '',
       selectedValue: '',
-      selectItems: [
-        {
-          value: 1, category: 'Mieszkanie',
-        },
-        {
-          value: 2, category: 'Samochód',
-        },
-      ],
+      selectItems: this.arrayCategory,
+      // [
+      //   {
+      //     value: 1, category: 'Mieszkanie',
+      //   },
+      //   {
+      //     value: 2, category: 'Samochód',
+      //   },
+      // ],
     };
   },
 };
