@@ -9,33 +9,32 @@
           >X</button>
         </div>
         <div class="modal__box">
-
           <p class="modal__text-info">Utwórz nową kategorię:</p>
           <input
             class="input-text input-text__modal"
             :class="{error: isError}"
-            v-model="value"
+            v-model="inputValue"
             type="text" placeholder="Nazwa"
           >
-          <p class="modal__text-info">Wybierz ikonę:</p>
+          <p class="modal__text-info" :class="{error: isError}">Wybierz ikonę:</p>
           <div class="modal__list">
             <ul class="list">
               <li class="list__item">
-                <input class="list__radio-input" type="radio" name="radio" id="category_1" checked/>
+                <input v-model="radioValue" value="home" class="list__radio-input" type="radio" name="radio" id="category_1"/>
                 <label class="custom-radio__label" for="category_1">
                   <img src="../assets/img/home.svg" alt=""/>
                 </label>
               </li>
               <li class="list__item">
-                <input class="list__radio-input" type="radio" name="radio" id="category_2"/>
+                <input v-model="radioValue" value="wallet" class="list__radio-input" type="radio" name="radio" id="category_2"/>
                 <label class="custom-radio__label" for="category_2">
-                  <img src="../assets/img/home.svg" alt=""/>
+                  <img src="../assets/img/wallet.svg" alt=""/>
                 </label>
               </li>
               <li class="list__item">
-                <input class="list__radio-input" type="radio" name="radio" id="category_3"/>
+                <input v-model="radioValue" value="riding-car" class="list__radio-input" type="radio" name="radio" id="category_3"/>
                 <label class="custom-radio__label" for="category_3">
-                  <img src="../assets/img/home.svg" alt=""/>
+                  <img src="../assets/img/riding-car.svg" alt=""/>
                 </label>
               </li>
             </ul>
@@ -56,15 +55,17 @@ export default {
   name: 'CategoryModal',
   data() {
     return {
-      value: '',
+      inputValue: '',
+      radioValue: '',
       isError: false,
     };
   },
   methods: {
     sendAction() {
-      if (this.value !== '') {
-        this.$emit('add-new-category', this.value);
-        this.value = '';
+      if (this.inputValue !== '' && this.radioValue !== '') {
+        this.$emit('add-new-category', this.inputValue, this.radioValue);
+        this.inputValue = '';
+        this.radioValue = '';
         this.isError = false;
       } else {
         this.isError = true;
