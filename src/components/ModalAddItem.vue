@@ -12,25 +12,26 @@
         <p class="modal__text-info">Wydatki</p>
         <input
           v-model="itemName"
+          :class="{error: isError}"
           class="input-text input-text__modal"
           type="text" placeholder="Nazwa" name="name-item">
         <input
           v-model="value"
+          :class="{error: isError}"
           class="input-text input-text__modal" type="number" placeholder="Wartość" name="value-item">
-        <select v-model="selectedValue" class="input-text input-text__modal" name="">
-          <option disabled>- brak kategori -</option>
-          <option v-for="item in selectItems" :value="item.category" :key="item.value">
-            {{item.category}}
+        <select v-model="selectedValue" :class="{error: isError}" class="input-text input-text__modal" name="" aria-placeholder=">- brak kategori -">
+          <option selected disabled>- brak kategori -</option>
+          <option v-for="item in arrayCategory" :value="item.id" :key="item.value">
+            {{item.title}}
           </option>
           <!-- <option value="2"></option> -->
           <!-- <option value="3">Dom</option> -->
         </select>
         <div class="modal__add-btn-box">
           <button
-            @click="$emit('add-new-item', itemName, value, selectedValue)"
             class="btn__add-budget-btn"
+            @click="checkValidation"
           >DODAJ</button>
-          <button @click="show">casd</button>
         </div>
       </div>
     </div>
@@ -40,22 +41,30 @@
 <script>
 export default {
   name: 'ModalAddItem',
-  props: ['categories', 'arrayCategory'],
+  props: ['arrayCategory'],
   data() {
     return {
       itemName: '',
       value: '',
       selectedValue: '',
       selectItems: this.arrayCategory,
-      // [
-      //   {
-      //     value: 1, category: 'Mieszkanie',
-      //   },
-      //   {
-      //     value: 2, category: 'Samochód',
-      //   },
-      // ],
+      isError: false,
     };
+  },
+  methods: {
+    checkValidation() {
+      if (this.inputName !== '' && this.value !== '') {
+        this.$emit(
+          'add-item-to-category',
+          this.itemName,
+          this.value,
+          this.selectedValue,
+        );
+        this.isError = false;
+      } else {
+        this.isError = true;
+      }
+    },
   },
 };
 </script>
@@ -150,6 +159,14 @@ export default {
     &:focus, &:hover{
       color: #000;
       box-shadow: 0px 10px 10px -11px #000;
+    }
+  }
+  .error{
+    box-shadow: 0px 10px 10px -11px orange;
+    border-bottom: 1px orange solid;
+    &:focus{
+      box-shadow: 0px 10px 10px -11px orange;
+      border-bottom: 1px orange solid;
     }
   }
   @keyframes show-up {
