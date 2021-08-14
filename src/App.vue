@@ -7,6 +7,7 @@
       :soldo="finalSoldo"
     />
     <Expenses
+      :items="items" v-model="items"
       :categoryName="categoryName"
       @send-soldo="updateSoldo"
       @category-out="addArrayInside"
@@ -21,10 +22,11 @@
       v-if="categoryModalVisibility"
     />
     <ModalAddItem
-      :arrayCategory="elItems"
+      :arrayCategory="items"
       v-if="addItemModalVisibility"
       @close-add-item-modal="addItemModalVisibility = false"
-      @add-new-item="showValue"
+      @add-item-to-category="showValues"
+      @show="info"
     />
     <Navbar
       @budget-open="budgetModalVisibility = true"
@@ -57,13 +59,43 @@ export default {
   },
   data() {
     return {
-      finalSoldo: 200,
-      paymentValue: 2001,
+      finalSoldo: 0,
+      paymentValue: 0,
       categoryName: '',
       budgetModalVisibility: false,
       categoryModalVisibility: false,
       addItemModalVisibility: false,
       elItems: [],
+      items: [
+        {
+          icon: '/img/home.ab898512.svg',
+          title: 'Mieszkanie',
+          totalPrice: 10,
+          hide: true,
+          id: 1,
+          elems: [
+            {
+              id: Math.random(),
+              name: 'Pierogi',
+              price: 200,
+            },
+          ],
+        },
+        {
+          icon: '/img/home.ab898512.svg',
+          title: 'Dom',
+          totalPrice: 100,
+          hide: true,
+          id: 2,
+          elems: [
+            {
+              id: Math.random(),
+              name: 'Pierogi',
+              price: 200,
+            },
+          ],
+        },
+      ],
     };
   },
   methods: {
@@ -73,9 +105,16 @@ export default {
       }
       this.budgetModalVisibility = !this.budgetModalVisibility;
     },
-    addNewCategory(value) {
-      this.categoryName = value;
+    addNewCategory(input, radio) {
       this.categoryModalVisibility = false;
+      this.items.push({
+        icon: `/img/${radio}.ab898512.svg`,
+        title: input,
+        totalPrice: 0,
+        hide: true,
+        id: Math.random(),
+        elems: [],
+      });
     },
     updateSoldo(value) {
       this.finalSoldo = value;
@@ -83,6 +122,10 @@ export default {
     addArrayInside(arrayFromExpanses) {
       this.elItems = arrayFromExpanses;
       console.log(this.elItems);
+    },
+    showValues(itemName, price) {
+      this.addItemModalVisibility = !this.addItemModalVisibility;
+      this.items[0].elems.push({ id: Math.random(), name: itemName, price });
     },
   },
 };
