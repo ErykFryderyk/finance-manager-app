@@ -1,4 +1,3 @@
-/* eslint-disable vue/script-setup-uses-vars */
 <template>
     <HeroBackground />
     <HeaderSection/>
@@ -77,21 +76,21 @@ export default {
             {
               id: Math.random(),
               name: 'Pierogi',
-              price: 200,
+              price: 20,
             },
           ],
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dom',
-          totalPrice: 100,
+          totalPrice: 10,
           hide: true,
           id: 2,
           elems: [
             {
               id: Math.random(),
-              name: 'Pierogi',
-              price: 200,
+              name: 'Owca',
+              price: 3,
             },
           ],
         },
@@ -123,9 +122,9 @@ export default {
       this.elItems = arrayFromExpanses;
       console.log(this.elItems);
     },
-    showValues(itemName, price) {
+    showValues(itemName, price, radioElement) {
       this.addItemModalVisibility = !this.addItemModalVisibility;
-      this.items[0].elems.push({ id: Math.random(), name: itemName, price });
+      this.items[radioElement].elems.push({ id: Math.random(), name: itemName, price });
     },
   },
 };

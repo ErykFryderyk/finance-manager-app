@@ -21,7 +21,7 @@
           class="input-text input-text__modal" type="number" placeholder="Wartość" name="value-item">
         <select v-model="selectedValue" :class="{error: isError}" class="input-text input-text__modal" name="" aria-placeholder=">- brak kategori -">
           <option selected disabled>- brak kategori -</option>
-          <option v-for="item in arrayCategory" :value="item.id" :key="item.value">
+          <option v-for="(item, i) in arrayCategory" :value="i" :key="item.value">
             {{item.title}}
           </option>
           <!-- <option value="2"></option> -->
@@ -53,7 +53,8 @@ export default {
   },
   methods: {
     checkValidation() {
-      if (this.inputName !== '' && this.value !== '') {
+      console.log(this.selectedValue);
+      if (this.inputName !== '' && this.value !== '' && this.selectedValue !== '') {
         this.$emit(
           'add-item-to-category',
           this.itemName,
