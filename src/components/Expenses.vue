@@ -69,13 +69,10 @@ export default {
   methods: {
     clickEvent(id) {
       const index = this.items.findIndex((el) => id === el.id);
-      console.log(index);
-      console.log(this.items[1]);
       // eslint-disable-next-line vue/no-mutating-props
       this.items[index].hide = !this.items[index].hide;
     },
     createNewExpensesBar() {
-      console.log(this.categoryName);
       // eslint-disable-next-line vue/no-mutating-props
       this.items.push({
         id: Math.random(),
