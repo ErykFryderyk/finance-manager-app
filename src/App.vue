@@ -64,26 +64,32 @@ export default {
       budgetModalVisibility: false,
       categoryModalVisibility: false,
       addItemModalVisibility: false,
-      elItems: [],
+      summaryTotalPrice: null,
+      childrenPriceArray: [],
       items: [
         {
           icon: '/img/home.ab898512.svg',
           title: 'Mieszkanie',
-          totalPrice: 10,
+          totalPrice: 300,
           hide: true,
           id: 1,
           elems: [
             {
               id: Math.random(),
               name: 'Pierogi',
-              price: 20,
+              price: 299,
+            },
+            {
+              id: Math.random(),
+              name: 'Pierogi',
+              price: 1,
             },
           ],
         },
         {
           icon: '/img/home.ab898512.svg',
           title: 'Dom',
-          totalPrice: 10,
+          totalPrice: 0,
           hide: true,
           id: 2,
           elems: [
@@ -91,6 +97,11 @@ export default {
               id: Math.random(),
               name: 'Owca',
               price: 3,
+            },
+            {
+              id: Math.random(),
+              name: 'Lubczyk',
+              price: 97,
             },
           ],
         },
@@ -103,6 +114,14 @@ export default {
         this.paymentValue = value;
       }
       this.budgetModalVisibility = !this.budgetModalVisibility;
+      this.checkPayment();
+    },
+    checkPayment() {
+      this.finalSoldo = 0;
+      this.items.forEach((el) => {
+        this.summaryTotalPrice += el.totalPrice;
+      });
+      this.finalSoldo = this.paymentValue - this.summaryTotalPrice;
     },
     addNewCategory(input, radio) {
       this.categoryModalVisibility = false;
@@ -124,7 +143,31 @@ export default {
     },
     showValues(itemName, price, radioElement) {
       this.addItemModalVisibility = !this.addItemModalVisibility;
-      this.items[radioElement].elems.push({ id: Math.random(), name: itemName, price });
+      this.items[radioElement].elems.push({
+        id: Math.random(),
+        name: itemName,
+        // eslint-disable-next-line radix
+        price: parseInt(price),
+      });
+      this.podliczWydatki();
+    },
+    podliczWydatki() {
+      let dodawana = 0;
+      this.childrenPriceArray = [];
+      this.items.forEach((el) => {
+        el.elems.forEach((element) => {
+          dodawana += element.price;
+        });
+        // eslint-disable-next-line radix
+        this.childrenPriceArray.push(dodawana);
+        dodawana = 0;
+      });
+      console.log(this.childrenPriceArray);
+      // eslint-disable-next-line no-plusplus
+      for (let i = 0; i < this.childrenPriceArray.length; i++) {
+        this.items[i].totalPrice = this.childrenPriceArray[i];
+      }
+      this.checkPayment();
     },
   },
 };
