@@ -67,44 +67,25 @@ export default {
       summaryTotalPrice: null,
       childrenPriceArray: [],
       items: [
-        {
-          icon: '/img/home.ab898512.svg',
-          title: 'Mieszkanie',
-          totalPrice: 300,
-          hide: true,
-          id: 1,
-          elems: [
-            {
-              id: Math.random(),
-              name: 'Pierogi',
-              price: 299,
-            },
-            {
-              id: Math.random(),
-              name: 'Pierogi',
-              price: 1,
-            },
-          ],
-        },
-        {
-          icon: '/img/home.ab898512.svg',
-          title: 'Dom',
-          totalPrice: 0,
-          hide: true,
-          id: 2,
-          elems: [
-            {
-              id: Math.random(),
-              name: 'Owca',
-              price: 3,
-            },
-            {
-              id: Math.random(),
-              name: 'Lubczyk',
-              price: 97,
-            },
-          ],
-        },
+        // {
+        //   icon: '/img/home.ab898512.svg',
+        //   title: 'Mieszkanie',
+        //   totalPrice: 0,
+        //   hide: true,
+        //   id: 1,
+        //   elems: [
+        //     // {
+        //     //   id: Math.random(),
+        //     //   name: 'Pierogi',
+        //     //   price: 299,
+        //     // },
+        //     // {
+        //     //   id: Math.random(),
+        //     //   name: 'Pierogi',
+        //     //   price: 1,
+        //     // },
+        //   ],
+        // },
       ],
     };
   },
@@ -117,7 +98,7 @@ export default {
       this.checkPayment();
     },
     checkPayment() {
-      this.finalSoldo = 0;
+      this.summaryTotalPrice = 0;
       this.items.forEach((el) => {
         this.summaryTotalPrice += el.totalPrice;
       });
