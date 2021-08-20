@@ -26,11 +26,12 @@
       <ul class="expenses-box__list">
         <li
           class="expenses-box__item"
-          v-for="el in item.elems" :key="el.id">
+          v-for="(el, i) in item.elems" :key="el.id">
           {{ el.name }}
           <span class="expenses-box__price">
             {{ el.price }} zł
           </span>
+          <button @click="removeChild(item.elems, i)">Revome</button>
         </li>
       </ul>
     </div>
@@ -78,6 +79,10 @@ export default {
         id: Math.random(),
         name: this.categoryName,
       });
+    },
+    // eslint-disable-next-line no-unused-vars
+    removeChild(arr, index) {
+      arr.splice(index, index + 1);
     },
   },
 };
