@@ -27,11 +27,19 @@
         <li
           class="expenses-box__item"
           v-for="(el, i) in item.elems" :key="el.id">
-          {{ el.name }}
-          <span class="expenses-box__price">
-            {{ el.price }} zł
-          </span>
-          <button @click="removeChild(item.elems, i)">Revome</button>
+          <div class="expenses-box__item-inner">
+            <span>
+              {{ el.name }}
+            </span>
+            <button
+              class="remove-btn"
+              @click="removeChild(item.elems, i)">
+                REMOVE
+            </button>
+            <span class="expenses-box__price">
+              {{ el.price }} zł
+            </span>
+          </div>
         </li>
       </ul>
     </div>
@@ -48,24 +56,6 @@ export default {
     return {
       soldo: null,
     };
-  },
-  watch: {
-    // categoryName(val, oldVal) {
-    //   if (val !== oldVal) {
-    //     this.items.push({
-    //       id: Math.random(),
-    //       title: val,
-    //       icon: '/img/home.ab898512.svg',
-    //       totalPrice: 0,
-    //       hide: true,
-    //       elems: [
-    //         // {
-    //         //   id: Math.random(), name: 'dodany', price: 10,
-    //         // },
-    //       ],
-    //     });
-    //   }
-    // },
   },
   methods: {
     clickEvent(id) {
@@ -147,24 +137,50 @@ export default {
 }
 .expenses-box{
   width: 100%;
-  background-color: #00000040;;
+  background-color: #cacaca;
   transition: transform 0.3s ease;
 
   &__list{
     list-style: none;
-    padding: 5px 0;
-    margin:0 30px;
   }
 
   &__item{
+    border-bottom: 1px solid #00000040;
+    height: 40px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+  }
+
+  &__item-inner{
+    margin: 0 15px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 6fr 3fr 2fr;
+  }
+
+  &__price{
+    text-align: right;
   }
 
   &--close{
     height: 0;
     display: none;
     transform: scaleY(0) translateY(-100%);
+  }
+}
+.remove-btn{
+  width: 60px;
+  border: 1px solid #e06a6a;
+  background-color: #eea662;
+  color: white;
+  font-size: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: box-shadow .2s ease;
+
+  &:hover{
+    box-shadow: 0px 0px 5px 0px #747474;
   }
 }
 .hide{
