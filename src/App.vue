@@ -10,6 +10,7 @@
       :categoryName="categoryName"
       @send-soldo="updateSoldo"
       @category-out="addArrayInside"
+      @check-payment="podliczWydatki"
     />
     <BudgetModal
       @close-modal="showModal"

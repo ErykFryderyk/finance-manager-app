@@ -83,6 +83,7 @@ export default {
     // eslint-disable-next-line no-unused-vars
     removeChild(arr, index) {
       arr.splice(index, index + 1);
+      this.$emit('check-payment');
     },
   },
 };
