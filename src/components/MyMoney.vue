@@ -1,12 +1,17 @@
 <template>
   <div class="wrapper">
-    <div class="previous">
-      <button class="previous__btn">
+    <div class="months-buttons">
+      <button class="months-buttons__btn months-buttons__btn--previous-month"
+      @click="decrease">
         <span>&laquo;</span> Poprzedni miesiąc
+      </button>
+      <button class="months-buttons__btn months-buttons__btn--next-month"
+      @click="increase">
+        Następny miesiąc <span>&raquo;</span>
       </button>
     </div>
     <div class="box">
-      <h2 class="box__month">Październik</h2>
+      <h2 class="box__month">{{months[counter]}}</h2>
       <span class="box__label">Pozostało</span>
       <h2 class="box__rest-money">{{ soldo }} PLN</h2>
       <span class="box__label">Miesięczna wypłata</span>
@@ -23,7 +28,25 @@ export default {
   ],
   data() {
     return {
+      counter: 0,
+      months: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień'],
     };
+  },
+  methods: {
+    increase() {
+      // eslint-disable-next-line no-plusplus
+      this.counter++;
+      if (this.counter >= 12) {
+        this.counter = 0;
+      }
+    },
+    decrease() {
+      // eslint-disable-next-line no-plusplus
+      this.counter--;
+      if (this.counter <= 0) {
+        this.counter = 11;
+      }
+    },
   },
 };
 </script>
@@ -38,10 +61,12 @@ export default {
   padding: 0 15px;
   color: #272727;
 }
-.previous{
+.months-buttons{
   width: 100%;
   height: 50px;
   line-height: 50px;
+  display:flex;
+  justify-content: space-between;
   &__btn{
     border: none;
     background-color: transparent;
@@ -51,7 +76,7 @@ export default {
     transition: color .3s ease;
 
     &:hover{
-      color:red;
+      color:#26313a;
     }
     span{
       font-size: 18px;
