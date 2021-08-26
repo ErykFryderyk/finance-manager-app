@@ -13,6 +13,7 @@
         <input
           v-model="itemName"
           :class="{error: isError}"
+          autocomplete="off"
           class="input-text input-text__modal"
           type="text" placeholder="Nazwa" name="name-item">
         <input
