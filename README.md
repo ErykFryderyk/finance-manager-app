@@ -39,12 +39,7 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm install
    ```
-
-### Project setup
-```
-npm install
-```
-
+   
 ### Compiles and hot-reloads for development
 ```
 npm run serve
