@@ -1,11 +1,5 @@
 # finance-menager-app
 
-This application is a simple help in managing your money
-
-<p align="center">
-    <a href="https://erykfryderyk.github.io/finance-menager-app/">View Demo</a>
-</p>
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
