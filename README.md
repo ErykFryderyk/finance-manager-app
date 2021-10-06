@@ -1,11 +1,5 @@
 # finance-menager-app
 
-This application is a simple help in managing your money
-
-<p align="center">
-    <a href="https://erykfryderyk.github.io/finance-menager-app/">View Demo</a>
-</p>
-
 <!-- TABLE OF CONTENTS -->
 <details open="open">
   <summary>Table of Contents</summary>
@@ -45,12 +39,7 @@ To get a local copy up and running follow these simple example steps.
    ```sh
    npm install
    ```
-
-### Project setup
-```
-npm install
-```
-
+   
 ### Compiles and hot-reloads for development
 ```
 npm run serve
