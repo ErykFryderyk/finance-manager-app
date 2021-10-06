@@ -75,16 +75,16 @@ export default {
         //   hide: true,
         //   id: 1,
         //   elems: [
-        //     // {
-        //     //   id: Math.random(),
-        //     //   name: 'Pierogi',
-        //     //   price: 299,
-        //     // },
-        //     // {
-        //     //   id: Math.random(),
-        //     //   name: 'Pierogi',
-        //     //   price: 1,
-        //     // },
+        //     {
+        //       id: Math.random(),
+        //       name: 'Pierogi',
+        //       price: 299,
+        //     },
+        //     {
+        //       id: Math.random(),
+        //       name: 'Pierogi',
+        //       price: 1,
+        //     },
         //   ],
         // },
       ],
@@ -105,10 +105,11 @@ export default {
       });
       this.finalSoldo = this.paymentValue - this.summaryTotalPrice;
     },
-    addNewCategory(input, radio) {
+    addNewCategory(input) {
       this.categoryModalVisibility = false;
       this.items.push({
-        icon: `/img/${radio}.ab898512.svg`,
+        // icon: `/img/${radio}.ab898512.svg`,
+        // icon: radio,
         title: input,
         totalPrice: 0,
         hide: true,
