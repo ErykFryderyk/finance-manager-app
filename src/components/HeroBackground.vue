@@ -13,11 +13,8 @@ export default {
 .hero-background{
   width: 100%;
   height: 100vh;
-  position: fixed;
   background: #AED6F1;
-  z-index: -1;
-}
-.shape-element{
-  fill: #f9f9f9;
+  // z-index: -1;
+  position: absolute;
 }
 </style>
