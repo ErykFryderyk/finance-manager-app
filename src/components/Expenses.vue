@@ -15,7 +15,7 @@
         345.449C242.115,351.621,234.018,354.706,225.923,354.706z"/>
         </svg>
       </div>
-      <img class="expenses-bar__icon" :src="item.icon" alt="">
+      <img class="expenses-bar__icon" :src="require('../assets/img/' + item.icon + '.svg')" alt="">
       <div class="expenses-bar__item">
         <h3 class="expenses-bar__title">{{ item.title }}</h3>
         <span class="expenses-bar__price">{{ item.totalPrice }} zł</span>
