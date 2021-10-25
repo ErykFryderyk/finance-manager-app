@@ -74,7 +74,7 @@ export default {
 <style lang="scss" scoped>
   .modal-wrapper{
     background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
+    position: absolute;
     top:0;
     left: 0;
     bottom: 0;
@@ -87,6 +87,9 @@ export default {
   .modal{
     background-color:#009688;
     padding: 10px 20px 40px 20px;
+    margin: 0 15px 0 15px;
+    width:100%;
+    max-width:400px;
     box-shadow: 0px 0px 15px 10px #00000075;
     transform: scale(0);
     animation-name: show-up;
