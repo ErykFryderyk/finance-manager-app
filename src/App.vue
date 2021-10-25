@@ -1,5 +1,6 @@
 <template>
-    <HeroBackground />
+  <div id="app">
+    <!-- <HeroBackground /> -->
     <HeaderSection/>
     <MyMoney
       :payment="paymentValue"
@@ -33,10 +34,11 @@
       @category-open="categoryModalVisibility = true "
       @add-item-open="addItemModalVisibility = true"
     />
+  </div>
 </template>
 
 <script>
-import HeroBackground from './components/HeroBackground.vue';
+// import HeroBackground from './components/HeroBackground.vue';
 import HeaderSection from './components/Header.vue';
 import MyMoney from './components/MyMoney.vue';
 import Expenses from './components/Expenses.vue';
@@ -48,7 +50,7 @@ import ModalAddItem from './components/ModalAddItem.vue';
 export default {
   name: 'App',
   components: {
-    HeroBackground,
+    // HeroBackground,
     HeaderSection,
     MyMoney,
     Expenses,
@@ -69,11 +71,11 @@ export default {
       childrenPriceArray: [],
       items: [
         // {
-        //   icon: '/img/home.ab898512.svg',
+        //   icon: 'home',
         //   title: 'Mieszkanie',
         //   totalPrice: 0,
         //   hide: true,
-        //   id: 1,
+        //   id: 0,
         //   elems: [
         //     {
         //       id: Math.random(),
@@ -105,11 +107,10 @@ export default {
       });
       this.finalSoldo = this.paymentValue - this.summaryTotalPrice;
     },
-    addNewCategory(input) {
+    addNewCategory(input, radio) {
       this.categoryModalVisibility = false;
       this.items.push({
-        // icon: `/img/${radio}.ab898512.svg`,
-        // icon: radio,
+        icon: radio,
         title: input,
         totalPrice: 0,
         hide: true,
@@ -167,6 +168,15 @@ export default {
 body{
   font-size: 17px;
   color: black;
+  background-color: rgb(48, 48, 48);
   font-family: 'Poppins', sans-serif;
+}
+#app{
+  width: 100%;
+  max-width: 800px;
+  height: 100vh;
+  position: relative;
+  background-color: #AED6F1;
+  margin: 0 auto 0 auto;
 }
 </style>
