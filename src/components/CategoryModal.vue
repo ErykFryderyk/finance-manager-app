@@ -37,6 +37,24 @@
                   <img src="../assets/img/riding-car.svg" alt=""/>
                 </label>
               </li>
+              <li class="list__item">
+                <input v-model="radioValue" value="salad" class="list__radio-input" type="radio" name="radio" id="category_4"/>
+                <label class="custom-radio__label" for="category_4">
+                  <img src="../assets/img/salad.svg" alt=""/>
+                </label>
+              </li>
+              <li class="list__item">
+                <input v-model="radioValue" value="life" class="list__radio-input" type="radio" name="radio" id="category_5"/>
+                <label class="custom-radio__label" for="category_5">
+                  <img src="../assets/img/life.svg" alt=""/>
+                </label>
+              </li>
+              <li class="list__item">
+                <input v-model="radioValue" value="save-money" class="list__radio-input" type="radio" name="radio" id="category_6"/>
+                <label class="custom-radio__label" for="category_6">
+                  <img src="../assets/img/save-money.svg" alt=""/>
+                </label>
+              </li>
             </ul>
           </div>
           <div class="modal__add-btn-box">
@@ -78,7 +96,7 @@ export default {
 <style lang="scss" scoped>
   .modal-wrapper{
     background-color: rgba(0, 0, 0, 0.8);
-    position: fixed;
+    position: absolute;
     top:0;
     left: 0;
     bottom: 0;
@@ -91,6 +109,9 @@ export default {
   .modal{
     background-color:#009688;
     padding: 10px 20px 40px 20px;
+    margin: 0 15px 0 15px;
+    width:100%;
+    max-width:400px;
     box-shadow: 0px 0px 15px 10px #00000075;
     transform: scale(0);
     animation-name: show-up;
@@ -154,7 +175,9 @@ export default {
   .list{
     margin-top:20px;
     width: 100%;
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
     justify-content: space-between;
     list-style-type: none;
     margin:0;
