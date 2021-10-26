@@ -1,5 +1,5 @@
 <template>
-  <div class="navbar-wrapper">
+  <nav class="navbar-wrapper">
     <div class="navbar">
       <button class="navbar-btn"
         @click="$emit('budget-open')"
@@ -25,7 +25,7 @@
         </svg>
       </button>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
@@ -51,7 +51,7 @@ export default {
     display:flex;
     justify-content: space-around;
     align-items: center;
-    position: absolute;
+    position: fixed;
     bottom: 0;
     width: 100%;
     height: 60px;
