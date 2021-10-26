@@ -1,6 +1,4 @@
 <template>
-  <div id="app">
-    <!-- <HeroBackground /> -->
     <HeaderSection/>
     <MyMoney
       :payment="paymentValue"
@@ -34,11 +32,9 @@
       @category-open="categoryModalVisibility = true "
       @add-item-open="addItemModalVisibility = true"
     />
-  </div>
 </template>
 
 <script>
-// import HeroBackground from './components/HeroBackground.vue';
 import HeaderSection from './components/Header.vue';
 import MyMoney from './components/MyMoney.vue';
 import Expenses from './components/Expenses.vue';
@@ -50,7 +46,6 @@ import ModalAddItem from './components/ModalAddItem.vue';
 export default {
   name: 'App',
   components: {
-    // HeroBackground,
     HeaderSection,
     MyMoney,
     Expenses,
@@ -70,25 +65,25 @@ export default {
       summaryTotalPrice: null,
       childrenPriceArray: [],
       items: [
-        // {
-        //   icon: 'home',
-        //   title: 'Mieszkanie',
-        //   totalPrice: 0,
-        //   hide: true,
-        //   id: 0,
-        //   elems: [
-        //     {
-        //       id: Math.random(),
-        //       name: 'Pierogi',
-        //       price: 299,
-        //     },
-        //     {
-        //       id: Math.random(),
-        //       name: 'Pierogi',
-        //       price: 1,
-        //     },
-        //   ],
-        // },
+        {
+          icon: 'home',
+          title: 'Mieszkanie',
+          totalPrice: 999,
+          hide: true,
+          id: Math.random(),
+          elems: [
+            {
+              id: Math.random(),
+              name: 'Rachunek za prąd',
+              price: 299,
+            },
+            {
+              id: Math.random(),
+              name: 'Czynsz',
+              price: 700,
+            },
+          ],
+        },
       ],
     };
   },
@@ -168,15 +163,8 @@ export default {
 body{
   font-size: 17px;
   color: black;
-  background-color: rgb(48, 48, 48);
-  font-family: 'Poppins', sans-serif;
-}
-#app{
-  width: 100%;
-  max-width: 800px;
-  height: 100vh;
-  position: relative;
   background-color: #AED6F1;
-  margin: 0 auto 0 auto;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
 }
 </style>
