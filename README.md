@@ -16,7 +16,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="">
+<img src="https://github.com/ErykFryderyk/finance-menager-app/blob/master/src/assets/img/finance-menager-app.png">
 
 This is a simple app that helps control your expenses 
 ### Built With
