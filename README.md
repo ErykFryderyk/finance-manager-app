@@ -16,12 +16,13 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
+<img src="">
+
 This is a simple app that helps control your expenses 
 ### Built With
 
-* Vue.js
-* CSS (SCSS)
-* HTML
+* [Vue.js](https://vuejs.org)
+* CSS(SCSS)
 
 <!-- GETTING STARTED -->
 ## Getting Started
@@ -33,7 +34,7 @@ To get a local copy up and running follow these simple example steps.
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/ErykFryderyk/slow-and-furious-game.git
+   git clone https://github.com/ErykFryderyk/finance-menager-app.git
    ```
 2. Install NPM packages
    ```sh
