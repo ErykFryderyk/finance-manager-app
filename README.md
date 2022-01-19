@@ -1,4 +1,4 @@
-# finance-menager-app
+<h3 align="center">Finance manager</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -19,6 +19,7 @@
 <img src="https://github.com/ErykFryderyk/finance-menager-app/blob/master/src/assets/img/finance-menager-app.png">
 
 This is a simple app that helps control your expenses 
+
 ### Built With
 
 * [Vue.js](https://vuejs.org)
