@@ -1,4 +1,4 @@
-<h3 align="center">Finance manager</h3>
+<h3 align="center">Finance manager app</h3>
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
